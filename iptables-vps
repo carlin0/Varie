@@ -9,7 +9,6 @@
 # Permette tutto il traffico su loopback (lo0) traffic e elimina tutto il traffico che non usa lo0 verso 127/8
 -A INPUT -i lo -j ACCEPT
 -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
-#-A OUTPUT -o lo -j ACCEPT
 
 # Permette e regola ICMP ping
 -A INPUT -p icmp --icmp-type echo-reply -m state --state ESTABLISHED,RELATED -j ACCEPT
@@ -56,9 +55,6 @@
 
 # Accetta in entrata su tutte le connessioni stabilite
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-# Permette tutto il traffico in uscita
-#-A OUTPUT -j ACCEPT
 
 # Permette connessioni HTTP e HTTPS da qualsiasi parte provengano (le normali porte per i siti web)
 #-A INPUT -p tcp --dport 80 -j ACCEPT
