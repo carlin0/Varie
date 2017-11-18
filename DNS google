@@ -1,1 +1,9 @@
 
+Per impostare i Server DNS Google :
+
+- Click col sinistro sull'icona di network manager , scegliere modifica connessioni
+- Selezionare la connessione attiva e cliccare su Modifica
+- Andare su Impostazioni IPV4
+- Impostare Metodo , Automatico (DHCP) solo indirizzi
+- Nella casella Server DNS  scrivere 8.8.8.8, 8.8.4.4
+- Cliccare in basso a destra su Salva e riavviare il sistema
