@@ -74,8 +74,8 @@
 # permettere l'accesso solo per alcuni IP.
 
 # znc
-#-A INPUT -p tcp --dport 44535 -j ACCEPT
-#-A INPUT -p tcp --dport 23555 -j ACCEPT
+#-A INPUT -p tcp --dport 44531 -j ACCEPT
+#-A INPUT -p tcp --dport 23556 -j ACCEPT
 
 # bot
 #-A INPUT -p tcp --dport 3397 -j ACCEPT
@@ -94,8 +94,5 @@
 -A INPUT -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
 -A INPUT -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
 
-# Respingere tutto il resto del traffico in entrata
-#-A INPUT -j REJECT
-#-A FORWARD -j REJECT
 
 COMMIT
