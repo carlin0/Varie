@@ -1,0 +1,9 @@
+
+Come disabilitare wayland su Ubuntu 17.10
+
+- Aprire un terminale e digitare il comando → sudo nano /etc/gdm3/custom.conf
+- Cercare questa riga → #WaylandEnable=false
+- Rimuovere il cancelletto a inizio riga (decommentare)
+- Premere CTRL + O  ,e poi invio per salvare la modifica
+- Premere CTRL + X per uscire dall'editor di testo nano
+- Riavviare il sistema operativo
