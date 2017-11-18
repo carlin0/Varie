@@ -67,7 +67,6 @@
 # Permette le connessioni SSH
 # Il numero --dport e' lo stesso di quello in /etc/ssh/sshd_config
 -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
--A INPUT -p tcp -m state --state NEW --dport 777 -j ACCEPT
 
 # Ora ci si dovrebbe informare sulle regole di iptables e considerare se l'accesso ssh
 # per tutti sia realmente quello che si vuole. Molto probabilmente si preferisce 
