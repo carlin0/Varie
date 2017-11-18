@@ -1,4 +1,5 @@
 
+# Configurazione iptables per pc
 *filter
 
 -P INPUT DROP
