@@ -12,10 +12,6 @@
 # Permette e regola ICMP ping
 -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
 
-# scanport
--A INPUT -m recent --name portscan --rcheck --seconds 86400 -j DROP
--A FORWARD -m recent --name portscan --rcheck --seconds 86400 -j DROP
-
 # Accetta in entrata su tutte le connessioni stabilite
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
