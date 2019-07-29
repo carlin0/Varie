@@ -12,6 +12,11 @@
 # Permette e regola ICMP ping
 -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
 
+# pacchetti non validi
+-A INPUT -m state --state INVALID -j DROP
+-A FORWARD -m state --state INVALID -j DROP
+-A OUTPUT -m state --state INVALID -j DROP
+
 # Accetta in entrata su tutte le connessioni stabilite
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
