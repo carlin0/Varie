@@ -24,6 +24,10 @@
 # Il numero --dport e' lo stesso di quello in /etc/ssh/sshd_config
 -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
 
+# esempio
+#-A INPUT -p [PROTOCOLLO] --dport [PORTA] -s 151.33.0.0/16 -j ACCEPT
+#-A INPUT -s 151.0.0.0/8 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+
 # znc
 #-A INPUT -p tcp --dport 44531 -j ACCEPT
 #-A INPUT -p tcp --dport 23556 -j ACCEPT
