@@ -1,0 +1,21 @@
+## Prova di conf per ip6tables
+*filter
+
+-P INPUT DROP
+-P FORWARD DROP
+-P OUTPUT ACCEPT
+
+# Permette tutto il traffico su loopback 
+-A INPUT -i lo -j ACCEPT
+
+# Accetta in entrata su tutte le connessioni stabilite
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Permette le connessioni SSH
+# Il numero --dport e' lo stesso di quello in /etc/ssh/sshd_config
+-A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+
+# Permette accesso a SMTP, POP3, and IMAP
+#-A INPUT -m state --state NEW -p tcp -m multiport --dport 25,110,143 -j ACCEPT
+
+COMMIT
