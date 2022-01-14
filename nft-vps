@@ -1,0 +1,20 @@
+# Translated by /usr/sbin/iptables-restore-translate v1.8.7 on Fri Jan 14 21:08:15 2022
+add table ip filter
+add chain ip filter INPUT { type filter hook input priority 0; policy drop; }
+add chain ip filter FORWARD { type filter hook forward priority 0; policy drop; }
+add chain ip filter OUTPUT { type filter hook output priority 0; policy accept; }
+add rule ip filter INPUT tcp dport 5950 counter accept
+add rule ip filter INPUT iifname "lo" counter accept
+add rule ip filter INPUT iifname != "lo" ip daddr 127.0.0.0/8 counter reject
+add rule ip filter INPUT icmp type echo-request counter accept
+add rule ip filter INPUT ct state invalid  counter drop
+add rule ip filter INPUT ct state related,established  counter accept
+add rule ip filter INPUT ip saddr 151.0.0.0/8 ct state new  tcp dport 22 counter accept
+add rule ip filter INPUT ip frag-off & 0x1fff != 0 counter drop
+add rule ip filter INPUT tcp flags & (fin|syn|rst|psh|ack|urg) == fin|syn|rst|ack counter drop
+add rule ip filter INPUT tcp flags & (fin|syn) == fin|syn counter drop
+add rule ip filter INPUT tcp flags & (syn|rst) == syn|rst counter drop
+add rule ip filter INPUT tcp dport 55697 counter accept
+add rule ip filter FORWARD ct state invalid  counter drop
+add rule ip filter OUTPUT ct state invalid  counter drop
+# Completed on Fri Jan 14 21:08:15 2022
