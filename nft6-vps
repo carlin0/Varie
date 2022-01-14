@@ -1,0 +1,8 @@
+# Translated by /usr/sbin/ip6tables-restore-translate v1.8.7 on Fri Jan 14 21:10:03 2022
+add table ip6 filter
+add chain ip6 filter INPUT { type filter hook input priority 0; policy drop; }
+add chain ip6 filter FORWARD { type filter hook forward priority 0; policy drop; }
+add chain ip6 filter OUTPUT { type filter hook output priority 0; policy accept; }
+add rule ip6 filter INPUT iifname "lo" counter accept
+add rule ip6 filter INPUT ct state related,established  counter accept
+# Completed on Fri Jan 14 21:10:03 2022
