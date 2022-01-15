@@ -1,0 +1,14 @@
+# Translated by /usr/sbin/iptables-restore-translate v1.8.7 on Sat Jan 15 00:20:02 2022
+add table ip filter
+add chain ip filter input { type filter hook input priority 0; policy drop; }
+add chain ip filter forward { type filter hook forward priority 0; policy drop; }
+add rule ip filter input iifname "lo"  accept
+add rule ip filter input ct state related,established   accept
+# Completed on Sat Jan 15 00:20:02 2022
+# Translated by /usr/sbin/ip6tables-restore-translate v1.8.7 on Sat Jan 15 00:20:36 2022
+add table ip6 filter
+add chain ip6 filter input { type filter hook input priority 0; policy drop; }
+add chain ip6 filter forward { type filter hook forward priority 0; policy drop; }
+add rule ip6 filter input iifname "lo"  accept
+add rule ip6 filter input ct state related,established   accept
+# Completed on Sat Jan 15 00:20:36 2022
