@@ -1,0 +1,18 @@
+# Translated by /usr/sbin/iptables-restore-translate v1.8.7 on Fri Jan 14 21:08:15 2022
+add table ip filter
+add chain ip filter input { type filter hook input priority 0; policy drop; }
+add chain ip filter forward { type filter hook forward priority 0; policy drop; }
+add rule ip filter input iifname "lo"  accept
+add rule ip filter input icmp type echo-request  accept
+add rule ip filter input ct state related,established   accept
+add rule ip filter input ip saddr 151.0.0.0/8 ct state new  tcp dport 22  accept
+add rule ip filter input tcp dport 5950  accept
+add rule ip filter input tcp dport 55697  accept
+# Completed on Fri Jan 14 21:08:15 2022
+# Translated by /usr/sbin/ip6tables-restore-translate v1.8.7 on Fri Jan 14 21:10:03 2022
+add table ip6 filter
+add chain ip6 filter input { type filter hook input priority 0; policy drop; }
+add chain ip6 filter forward { type filter hook forward priority 0; policy drop; }
+add rule ip6 filter input iifname "lo"  accept
+add rule ip6 filter input ct state related,established   accept
+# Completed on Fri Jan 14 21:10:03 2022
