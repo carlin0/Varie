@@ -11,7 +11,8 @@ table inet filter {
 		icmp type echo-request accept
 		icmpv6 type { echo-request, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
 		ct state established,related accept
-		ip saddr 151.0.0.0/8 ct state new tcp dport 22 accept
+		ip saddr 151.0.0.0/8 ct state new tcp dport 997 accept
+		ip saddr 37.103.0.0/16 ct state new tcp dport 997 accept
 #		ct state new tcp dport 22 accept
 		tcp dport { 5950, 33697, 59875 } accept
 	}
