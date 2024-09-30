@@ -19,5 +19,6 @@ table inet filter {
 
 	chain forward {
 		type filter hook forward priority 0; policy drop;
+#		iifname "wg0" oifname "eth0" accept
 	}
 }
