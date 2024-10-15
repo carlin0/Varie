@@ -15,6 +15,7 @@ table inet filter {
 		ip saddr 37.103.0.0/16 ct state new tcp dport 997 accept
 #		ct state new tcp dport 22 accept
 		tcp dport { 5950, 33697, 59875 } accept
+#		tcp dport 65501-65510 accept
 	}
 
 	chain forward {
